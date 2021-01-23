@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laundary_app_ui/screens/login_page_screen.dart';
 
 class OnBoarding extends StatefulWidget {
   @override
@@ -47,10 +48,49 @@ class _OnBoardingState extends State<OnBoarding> {
                 children: List.generate(5, (index) => getIndicator(index)),
               )
             ],
-          )
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            left: 0,
+            child: InkWell(
+              onTap: changePage,
+              child: Container(
+                height: 70,
+                width: 70,
+                margin: EdgeInsets.only(bottom: 30),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xfff3953b),
+                      Color(0xffe57509),
+                    ],
+                    stops: [0, 1],
+                    begin: Alignment.topCenter,
+                  ),
+                ),
+                child: Icon(
+                  Icons.arrow_forward,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
+  }
+
+  void changePage() {
+    if (currentPage == 4) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginPageScreen()));
+    } else {
+      _pageController.animateToPage(currentPage + 1,
+          duration: Duration(milliseconds: 200), curve: Curves.linear);
+    }
   }
 
   setCurrentPage(int value) {
@@ -65,8 +105,9 @@ class _OnBoardingState extends State<OnBoarding> {
       width: (currentPage == pageNo) ? 20 : 10,
       margin: EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          color: (currentPage == pageNo) ? Colors.orange : Colors.grey),
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        color: (currentPage == pageNo) ? Colors.orange : Colors.grey,
+      ),
     );
   }
 
