@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laundary_app_ui/screens/order_page_screen.dart';
 import 'package:laundary_app_ui/style/home_page_style_scheme.dart';
 import 'package:laundary_app_ui/style/login_style_scheme.dart';
 
@@ -123,7 +124,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           ),
                           SizedBox(height: 10),
                           InkWell(
-                            onTap: () {},
+                            onTap: openOrderPage,
                             child: Container(
                               decoration: BoxDecoration(
                                 gradient: gradientStyle,
@@ -197,27 +198,60 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    gradient: gradientStyle,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Text(
-                    '+',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                    ),
-                  ),
-                )
-              ],
-            )
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     Container(
+            //       padding: EdgeInsets.all(10),
+            //       decoration: BoxDecoration(
+            //         gradient: gradientStyle,
+            //         shape: BoxShape.circle,
+            //       ),
+            //       child: Text(
+            //         '+',
+            //         style: TextStyle(
+            //           color: Colors.white,
+            //           fontSize: 30,
+            //         ),
+            //       ),
+            //     )
+            //   ],
+            // ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.orange,
+        iconSize: 30,
+        onTap: (value) => {},
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.track_changes),
+            label: 'Track Order',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.view_list),
+            label: 'My Order',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.contacts),
+            label: 'Profile',
+          ),
+        ],
+      ),
+    );
+  }
+
+  void openOrderPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => OrderPageScreen(),
       ),
     );
   }
