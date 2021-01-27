@@ -82,10 +82,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                       width: 180,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage(
-                            'assets/images/bannerImg.png',
-                          ),
-                        ),
+                            image: AssetImage('assets/images/bannerImg.png')),
                       ),
                     ),
                   )
@@ -93,10 +90,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
             ),
             SizedBox(height: 10),
-            Text(
-              'SERVICES',
-              style: headingStyle,
-            ),
+            Text('SERVICES', style: headingStyle),
             Container(
               height: 200,
               color: Color(0xfff1ffff),
@@ -107,8 +101,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     width: 120,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/servicesImg.png'),
-                      ),
+                          image: AssetImage('assets/images/servicesImg.png')),
                     ),
                   ),
                   Expanded(
@@ -118,10 +111,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text(
-                            'IRON ONLY',
-                            style: headingStyle,
-                          ),
+                          Text('IRON ONLY', style: headingStyle),
                           SizedBox(height: 10),
                           InkWell(
                             onTap: openOrderPage,
@@ -132,16 +122,11 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                     BorderRadius.all(Radius.circular(20)),
                               ),
                               padding: EdgeInsets.symmetric(
-                                vertical: 10,
-                                horizontal: 17,
-                              ),
-                              child: Text(
-                                'Place Order',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
+                                  vertical: 10, horizontal: 17),
+                              child: Text('Place Order',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600)),
                             ),
                           ),
                         ],
@@ -161,15 +146,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        'AVAILABILITY : ',
-                        style: contentStyle,
-                      ),
+                      Text('AVAILABILITY : ', style: contentStyle),
                       Text(
                         'AVAILABLE',
-                        style: contentStyle.copyWith(
-                          color: Colors.blue,
-                        ),
+                        style: contentStyle.copyWith(color: Colors.blue),
                       ),
                     ],
                   ),
@@ -186,15 +166,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'CHECK THE ESTIMATION',
-                    style: contentStyle,
-                  ),
+                  Text('CHECK THE ESTIMATION', style: contentStyle),
                   SizedBox(height: 10),
-                  Text(
-                    'You can check time estimation with price',
-                    style: contentStyle,
-                  )
+                  Text('You can check time estimation with price',
+                      style: contentStyle)
                 ],
               ),
             ),

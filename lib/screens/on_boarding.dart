@@ -84,6 +84,7 @@ class _OnBoardingState extends State<OnBoarding> {
   }
 
   void changePage() {
+    print("----------------$currentPage");
     if (currentPage == 4) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => LoginPageScreen()));
@@ -95,6 +96,7 @@ class _OnBoardingState extends State<OnBoarding> {
 
   setCurrentPage(int value) {
     currentPage = value;
+    print("++++++++++++++++$currentPage");
     setState(() {});
   }
 
